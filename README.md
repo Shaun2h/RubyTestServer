@@ -2,7 +2,7 @@
 
 This README would normally document whatever steps are necessary to get the
 application up and running. <br> 
-But since it's a test/learning repo, I won't be doing that.
+But since it's a test/learning repo, I won't be doing that. 
 
 Things you may want to cover:
 
