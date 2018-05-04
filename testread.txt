@@ -1,0 +1,1 @@
+"testing of routes. \n localhost:3000/base/new = current \n localhost:300/anythingelse = show all routes in routes.rb. " 
