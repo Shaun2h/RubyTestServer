@@ -1,1 +1,8 @@
-"testing of routes. \n localhost:3000/base/new = current \n localhost:300/anythingelse = show all routes in routes.rb. " 
+testing of routes. 
+localhost:3000/base/new = current 
+localhost:3000/anythingelse = show all routes in routes.rb.
+localhost:3000 is now mapped over to /base/new. using this in routes->  root to: 'base#new' apparently this changes the localhost:3000/ 
+to point to base/new instead. If i don't do base/new however... it won't work normally either though... 
+
+Rails is a language about convention. And i know the controllers should be uppercase first letter and singular, not plural. But it does'nt
+matter now. Keep in mind the issue of continuous convention use or insistence.
