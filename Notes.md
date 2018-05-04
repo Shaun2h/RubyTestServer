@@ -16,6 +16,10 @@ matter now. Keep in mind the issue of continuous convention use or insistence.<b
 <br>
 <br>
 
+#on Database.
+Typical sqlite database. Current type is sqlite3. accessible in /db of your root rails project.<br>
+
+
 #on Routing.
 
 more at: https://richonrails.com/articles/understanding-rails-routing<br>
