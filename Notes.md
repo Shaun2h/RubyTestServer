@@ -1,4 +1,4 @@
-
+  
 #notes notes baby.
 
 
@@ -71,7 +71,7 @@ resource :privacy_policy<br>
 
 
 
-<---------Generate specific parts using that keyword------------><br>
+<---------Generate specific parts using that keyword in routes.rb------------><br>
 
 resources :users, except: [:show]<br>
  generates actions for everything except for get "/users/:id"<br>
@@ -80,3 +80,56 @@ resource :privacy_policy, only: [:show]<br>
  only generate the get "/privacy_policy route for the Privacy Policy.<br>
 <br>
 
+<---------------Model stuff--------------------> <br>
+   Models are linked to your db it seems. Basic model startup => rails generate model post title:string body:text <br>
+   in this case post is the name of your model. This will generate a title column with a varchar type and a body column with a text
+    type in the databse (sqlite).<br>
+    If no type is specified the string type will be used by default.<br>
+    You can use the following types:<br>
+        integer<br>
+        primary_key<br>
+        decimal<br>
+        float<br>
+        boolean<br>
+        binary<br>
+        string<br>
+        text<br>
+        date<br>
+        time<br>
+        datetime<br>
+
+
+<---------------Migration stuff --------------------><br>
+
+There are a few ways to state the file. <br>
+
+This is the example of a example where you define up and down instead. <br>
+ So when you "up" is when you place the thing into the db<br>
+When you "down" is when you take the thing from the db<br>
+
+class CreateUrls < ActiveRecord::Migration <br>
+  def self.up <br>
+      create_table :urls do |t|<br>
+      t.string :url<br>
+      t.timestamps<br>
+    end<br>
+  end<br>
+  def self.down<br>
+    drop_table :urls<br>
+  end<br>
+end<br>
+
+
+
+Another option is to use change instead of up and down. <br>
+class CreateUsers < ActiveRecord::Migration[5.2]<br>
+  def change<br>
+    create_table :users do |t|<br>
+      t.string :username :null => false<br>
+      t.timestamps<br>
+    end<br>
+  end<br>
+end<br>
+
+of note is how it is used to tell how the database should be created.<br>
+don't forget to rake db:migrate<br>
